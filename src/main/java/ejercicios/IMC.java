@@ -11,9 +11,29 @@ import java.util.Scanner;
 public class IMC {
     public static String evaluar(int peso, double estatura, int edad) {
         // TODO: Coloca aquí el código del ejercicio 8: Índice de masa corporal
-        return "";
+        double imc = peso / (estatura * estatura);
+        
+       String Riesgo;
+        if (edad < 45) {
+            if (imc < 22.0) {
+                Riesgo = "bajo";
+            } else {
+               Riesgo = "medio";
+            }
+        } else {
+            if (imc < 22.0) {
+              Riesgo = "medio";
+            } else {
+              Riesgo = "alto";
+            }
+        }
+        
+        
+        String respuesta = String.format(Riesgo);
+        return respuesta;
+     
     }
-    
+
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
             System.out.print("Peso:");
